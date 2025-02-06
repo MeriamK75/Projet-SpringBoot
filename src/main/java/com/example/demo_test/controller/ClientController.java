@@ -13,12 +13,13 @@ import org.springframework.web.client.HttpClientErrorException;
 import java.util.List;
 import java.util.stream.Stream;
 
-@RestController
+@RestController // Gère des requêtes HTTPS
 @RequestMapping(path = "client")
 
 public class ClientController {
     private final ClientService clientService;
 
+    // Constructeur
     public ClientController(ClientService clientService) {
         this.clientService = clientService;
     }
@@ -45,7 +46,7 @@ public class ClientController {
 
     }
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.NO_CONTENT) // CODE 204 "SUCCESSFUL" --> "No Content"
     @PutMapping(path = "{id}", consumes = "application/json" )
     public void modifier(@PathVariable int id,@RequestBody Client client){
         this.clientService.modifier(id, client);

@@ -5,21 +5,21 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "CLIENT")
+@Table(name = "CLIENT") //Fait à référence à la BDD
 public class Client {
     @Id // cle primaire
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //id généré automatiquement par la BDD
     private int id;
     private String email;
     private String telephone;
     private Date creation;
-    @Column(name = "mis_a_jour" )
+    @Column(name = "mis_a_jour" ) //Fait référence à la BDD
     private Date misAJour;
 
 
     public Client() {
     }
-
+// Constructeur
     public Client(int id, String email, String telephone, Date creation, Date misAJour) {
         this.id = id;
         this.email = email;
@@ -28,7 +28,7 @@ public class Client {
         this.misAJour = misAJour;
     }
 
-    // Methodes pour lire et definir les données id
+    // Méthodes pour lire et définir les données id
     public int getId() {
         return id;
     }
@@ -37,7 +37,7 @@ public class Client {
         this.id = id;
     }
 
-// Méthodes pour lire et définir les données email
+    // Méthodes pour lire et définir les données email
     public String getEmail() {
         return email;
     }

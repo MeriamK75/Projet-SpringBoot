@@ -14,11 +14,12 @@ import java.util.List;
 public class SentimentController {
     private SentimentService sentimentService;
 
+    //Constructeur
     public SentimentController(SentimentService sentimentService) {
         this.sentimentService = sentimentService;
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.CREATED) //CODE 201 "SUCCESSFUL" --> "Created"
     @PostMapping(consumes = "application/json")
     public void creer(@RequestBody Sentiment sentiment){
     this.sentimentService.creer(sentiment);
@@ -30,7 +31,7 @@ public class SentimentController {
 
     }
 
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.ACCEPTED) //CODE 202 "SUCCESSFUL" --> "Accepted"
     @DeleteMapping(path = "{id}")
     public void supprimer(@PathVariable int id){
         this.sentimentService.supprimer(id);

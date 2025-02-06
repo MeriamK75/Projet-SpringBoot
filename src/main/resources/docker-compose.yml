@@ -1,3 +1,6 @@
+# BDD : MariaDB
+# Outil gestion de BDD : Adminer
+
 version: '3.1'
 services:
   db:
